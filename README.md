@@ -241,6 +241,20 @@ flutter run -d windows
 
 ---
 
+## ▲ Triển khai tự động lên Vercel (Vercel Deployment)
+
+Dự án đã tích hợp sẵn tệp cấu hình `vercel.json` và kịch bản biên dịch tối ưu `vercel-build.sh` (tự động nạp Flutter SDK, thiết lập biến môi trường và đóng gói Flutter Web Release).
+
+### Các bước triển khai:
+1. Đăng nhập vào [Vercel Dashboard](https://vercel.com) bằng tài khoản GitHub.
+2. Nhấn nút **Add New...** ➔ **Project** ➔ Chọn kho lưu trữ [congnghip/LTDT_FE](https://github.com/congnghip/LTDT_FE).
+3. Trong mục **Environment Variables**, cấu hình biến môi trường kết nối đến máy chủ Backend API:
+   - **Key:** `BASE_URL`
+   - **Value:** `https://your-backend-url.trycloudflare.com/api/` *(hoặc domain Render / Railway / VPS)*
+4. Nhấn **Deploy**. Vercel sẽ tự động khởi chạy quy trình build và cung cấp URL HTTPS chính thức toàn cầu (ví dụ: `https://ltdt-fe.vercel.app`).
+
+---
+
 ## 🐳 Đóng gói & Triển khai Docker (Web Nginx)
 
 Dự án đã tích hợp sẵn `Dockerfile` nhiều giai đoạn (Multi-stage build) để build Flutter Web và phục vụ bằng máy chủ web nhẹ Nginx:
